@@ -1,11 +1,23 @@
+/* css height properties: https://developer.mozilla.org/en-US/docs/Web/CSS/height */
+
 .h\+ {
   height: $spacing-unit-large;
 }
+
+/* css width properties: https://developer.mozilla.org/en-US/docs/Web/CSS/width */
 
 .w-1\/1 {
   width: 100%;
 }
 
-.w-20r {
-  width: 20rem;
+@media screen and (max-width: 699px) {
+  .w-20r\@sm {
+    width: 20rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .w-1\/1\@lg {
+    width: 100%;
+  }
 }

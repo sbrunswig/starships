@@ -5,8 +5,8 @@ const SWSelect = (props) => {
     props.filterStarship(e.target.value);
   };
   return (
-    <div class="d-f ov-h pos-r w-20r select">
-      <select class="bgc-gray900 c-white p-" onChange={handleStarshipChange}>
+    <div class="d-f pos-r ov-h select">
+      <select class="bgc-gray900 c-white p- w-1/1" onChange={handleStarshipChange}>
         <option value="All"> -- Select a manufacturer -- </option>
         {props.manufacturers.map((manufacturer, index) => (
           <option key={index} value={manufacturer}>

@@ -1,6 +1,10 @@
+/* css color properties: https://developer.mozilla.org/en-US/docs/Web/CSS/color */
+
 .c-white {
   color: white;
 }
+
+/* css font properties: https://developer.mozilla.org/en-US/docs/Web/CSS/font */
 
 .fw-700 {
   font-weight: 700;
@@ -10,6 +14,16 @@
   font-size: $spacing-unit-large;
 }
 
+/* css text-align properties: https://developer.mozilla.org/en-US/docs/Web/CSS/text-align */
+
 .ta-l {
   text-align: left;
+}
+
+.va-t {
+  vertical-align: top;
+}
+
+.whs-nw {
+  white-space: nowrap;
 }

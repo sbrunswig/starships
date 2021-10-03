@@ -1,3 +1,5 @@
+/* css margin properties: https://developer.mozilla.org/en-US/docs/Web/CSS/margin */
+
 .mb {
   margin-bottom: $spacing-unit;
 }
@@ -6,12 +8,16 @@
   margin-top: $spacing-unit;
 }
 
+/* css padding properties: https://developer.mozilla.org/en-US/docs/Web/CSS/padding */
+
 .p\+ {
   padding: $spacing-unit-large;
 }
+
 .p {
   padding: $spacing-unit;
 }
+
 .p- {
   padding: $spacing-unit-small;
 }

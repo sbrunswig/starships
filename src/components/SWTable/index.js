@@ -15,11 +15,15 @@ const SWTable = ({ starships }) => {
         {starships.map((starship, index) => {
           return (
             <tr key={starship.name}>
-              <td class={`p- ${index % 2 ? "bgc-gray800" : "bgc-gray700"}`}>{starship.name}</td>
-              <td class={`p- ${index % 2 ? "bgc-gray800" : "bgc-gray700"}`}>
+              <td class={`p- va-t ${index % 2 ? "bgc-gray800" : "bgc-gray700"}`}>
+                {starship.name}
+              </td>
+              <td class={`p- va-t ${index % 2 ? "bgc-gray800" : "bgc-gray700"}`}>
                 {starship.starship_class}
               </td>
-              <td class={`p- ${index % 2 ? "bgc-gray800" : "bgc-gray700"}`}>{starship.length} m</td>
+              <td class={`p- va-t whs-nw ${index % 2 ? "bgc-gray800" : "bgc-gray700"}`}>
+                {starship.length} m
+              </td>
             </tr>
           );
         })}
