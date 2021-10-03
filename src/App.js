@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchData } from "./utils/api";
 import SWSelect from "./components/SWSelect";
 import SWTable from "./components/SWTable";
-import "./styles/App.scss";
+import "./styles/main.scss";
 
 function App() {
   const [starships, setStarships] = useState([]);
@@ -35,36 +35,28 @@ function App() {
     const findStarships =
       manufacturer === "all"
         ? starships
-        : starships.filter(
-            (starship) => starship.manufacturer === manufacturer
-          );
+        : starships.filter((starship) => starship.manufacturer === manufacturer);
     setFilteredStarships(findStarships);
     console.log(findStarships);
   };
 
   return (
-    <div>
+    <main class="d-f fxd-c jc-c p+">
       {isError && (
         <div>
-          Don’t be too proud of this technological terror you’ve constructed.
-          The ability to destroy a planet is insignificant next to the power of
-          the Force.
+          Don’t be too proud of this technological terror you’ve constructed. The ability to destroy
+          a planet is insignificant next to the power of the Force.
         </div>
       )}
       {isLoaded ? (
-        <SWSelect
-          manufacturers={manufacturers}
-          filterStarship={filterStarship}
-        />
+        <>
+          <SWSelect manufacturers={manufacturers} filterStarship={filterStarship} />
+          <SWTable starships={filteredStarships} />
+        </>
       ) : (
         <div>Loading</div>
       )}
-      {isLoaded ? (
-        <SWTable starships={filteredStarships} />
-      ) : (
-        <div>Loading</div>
-      )}
-    </div>
+    </main>
   );
 }
 

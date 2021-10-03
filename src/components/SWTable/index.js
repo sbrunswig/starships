@@ -3,17 +3,17 @@ import React from "react";
 const SWTable = ({ starships }) => {
   return (
     <table>
-      <caption>Star Wars Starships</caption>
+      <caption class="d-n">Star Wars Starships</caption>
       <thead>
         <tr>
-          <th>Starship</th>
+          <th class="bgc-gray900 p- ta-l">Starship</th>
         </tr>
       </thead>
       <tbody>
-        {starships.map((starship) => {
+        {starships.map((starship, index) => {
           return (
             <tr key={starship.name}>
-              <td>{starship.name}</td>
+              <td class={index % 2 ? "p-" : "bgc-gray500 p-"}>{starship.name}</td>
               {/* <td>{starship.model}</td>
                 <td>{starship.manufacturer}</td>
                 <td>{starship.cost_in_credits}</td>
