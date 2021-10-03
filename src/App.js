@@ -9,6 +9,7 @@ function App() {
   const [starships, setStarships] = useState([]);
   const [filteredStarships, setFilteredStarships] = useState([]);
   const [manufacturers, setManufacturers] = useState([]);
+  const [selectedManufacturer, setSelectedManufacturer] = useState("All");
   const [isLoaded, setIsLoaded] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -34,11 +35,11 @@ function App() {
   /* user selects a manufacturer from dropdown */
   let filterStarship = (manufacturer) => {
     const findStarships =
-      manufacturer === "all"
+      manufacturer === "All"
         ? starships
         : starships.filter((starship) => starship.manufacturer === manufacturer);
     setFilteredStarships(findStarships);
-    console.log(findStarships);
+    setSelectedManufacturer(manufacturer);
   };
 
   return (
@@ -51,10 +52,11 @@ function App() {
       )}
       {isLoaded ? (
         <>
-          <SWSelect manufacturers={manufacturers} filterStarship={filterStarship} />
-          <div class="mt w-1/1">
-            <SWTable starships={filteredStarships} />
+          <div class="mb">
+            <SWSelect manufacturers={manufacturers} filterStarship={filterStarship} />
           </div>
+          <div class="p- w-1/1 bgc-purple900">{selectedManufacturer}</div>
+          <SWTable starships={filteredStarships} />
         </>
       ) : (
         <SWLoader />

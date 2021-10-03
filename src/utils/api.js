@@ -1,8 +1,5 @@
 export const fetchData = () => {
-  function getStarships(
-    url = "https://swapi.dev/api/starships",
-    starships = []
-  ) {
+  function getStarships(url = "https://swapi.dev/api/starships", starships = []) {
     return new Promise((resolve, reject) =>
       fetch(url)
         .then((response) => {
@@ -13,7 +10,6 @@ export const fetchData = () => {
             .json()
             .then((data) => {
               starships = starships.concat(data.results);
-
               if (data.next) {
                 getStarships(data.next, starships).then(resolve).catch(reject);
               } else {

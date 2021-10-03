@@ -8,6 +8,7 @@ const SWTable = ({ starships }) => {
         <tr>
           <th class="bgc-gray900 p- ta-l">Starship</th>
           <th class="bgc-gray900 p- ta-l">Class</th>
+          <th class="bgc-gray900 p- ta-l">Length</th>
         </tr>
       </thead>
       <tbody>
@@ -18,15 +19,7 @@ const SWTable = ({ starships }) => {
               <td class={`p- ${index % 2 ? "bgc-gray800" : "bgc-gray700"}`}>
                 {starship.starship_class}
               </td>
-              {/*   <td>{starship.manufacturer}</td>
-                <td>{starship.cost_in_credits}</td>
-                <td>{starship.length} meters</td>
-                <td>{starship.passengers}</td>
-                <td>{starship.max_atmosphering_speed}</td>
-                <td>{starship.hyperdrive_rating}</td>
-                <td>{starship.MGLT}</td>
-                <td>{starship.cargo_capacity}</td>
-                <td>{starship.consumables}</td> */}
+              <td class={`p- ${index % 2 ? "bgc-gray800" : "bgc-gray700"}`}>{starship.length} m</td>
             </tr>
           );
         })}

@@ -11,13 +11,13 @@ body {
   top: 0;
   right: 0;
   padding: $spacing-unit-small;
-  background-color: #34495e;
+  background-color: $gray800;
   transition: 0.25s all ease;
   pointer-events: none;
 }
 /* Transition */
 .select:hover::after {
-  color: #aa00ff;
+  color: $purple900;
 }
 
 .deathStar {

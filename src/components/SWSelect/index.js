@@ -7,7 +7,7 @@ const SWSelect = (props) => {
   return (
     <div class="d-f ov-h pos-r w-20r select">
       <select class="bgc-gray900 c-white p-" onChange={handleStarshipChange}>
-        <option value="all"> -- Select a manufacturer -- </option>
+        <option value="All"> -- Select a manufacturer -- </option>
         {props.manufacturers.map((manufacturer, index) => (
           <option key={index} value={manufacturer}>
             {manufacturer}
