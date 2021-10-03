@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchData } from "./utils/api";
+import SWLoader from "./components/SWLoader";
 import SWSelect from "./components/SWSelect";
 import SWTable from "./components/SWTable";
 import "./styles/main.scss";
@@ -41,7 +42,7 @@ function App() {
   };
 
   return (
-    <main class="d-f fxd-c jc-c p+">
+    <main class="ai-c d-f fxd-c p+">
       {isError && (
         <div>
           Don’t be too proud of this technological terror you’ve constructed. The ability to destroy
@@ -51,10 +52,12 @@ function App() {
       {isLoaded ? (
         <>
           <SWSelect manufacturers={manufacturers} filterStarship={filterStarship} />
-          <SWTable starships={filteredStarships} />
+          <div class="mt w-1/1">
+            <SWTable starships={filteredStarships} />
+          </div>
         </>
       ) : (
-        <div>Loading</div>
+        <SWLoader />
       )}
     </main>
   );

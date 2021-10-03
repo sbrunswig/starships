@@ -1,23 +1,13 @@
+.mt {
+  margin-top: $spacing-unit;
+}
+
 .p\+ {
-  padding: 48px;
+  padding: $spacing-unit-large;
 }
 .p {
-  padding: 24px;
+  padding: $spacing-unit;
 }
 .p- {
-  padding: 12px;
-}
-.pv- {
-  padding-bottom: 12px;
-  padding-top: 12px;
-}
-.p-- {
-  padding: 6px;
-}
-.ph-- {
-  padding-left: 12px;
-  padding-right: 12px;
-}
-.p--- {
-  padding: 3px;
+  padding: $spacing-unit-small;
 }
