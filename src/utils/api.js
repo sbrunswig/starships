@@ -1,10 +1,13 @@
 export const fetchData = () => {
-  function getStarships(url = "https://swapi.co/api/starships", starships = []) {
+  function getStarships(
+    url = "https://swapi.dev/api/starships",
+    starships = []
+  ) {
     return new Promise((resolve, reject) =>
       fetch(url)
         .then((response) => {
           if (response.status !== 200) {
-            throw `${response.status}: ${response.statusText}`;
+            throw new Error("error");
           }
           response
             .json()
@@ -23,6 +26,6 @@ export const fetchData = () => {
     );
   }
 
-  const starships = getStarships("https://swapi.dev/api/starships").then((data) => data);
+  const starships = getStarships().then((data) => data);
   return starships;
 };
