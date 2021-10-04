@@ -19,11 +19,12 @@ function App() {
   useEffect(() => {
     fetchData()
       .then((response) => {
+        const sortedStarships = response.sort((a, b) => (a.name > b.name ? 1 : -1));
         /* add all starships and filtered starships to state */
-        setStarships(response);
-        setFilteredStarships(response);
+        setStarships(sortedStarships);
+        setFilteredStarships(sortedStarships);
         /* add manufacturers to state */
-        setManufacturers(getUnique(response, "manufacturer"));
+        setManufacturers(getUnique(sortedStarships, "manufacturer"));
         /* all data is loaded */
         setIsLoaded(true);
       })
