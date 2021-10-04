@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/starships/static/css/main.17cd282e.chunk.css",
-    "main.js": "/starships/static/js/main.12a3c949.chunk.js",
-    "main.js.map": "/starships/static/js/main.12a3c949.chunk.js.map",
+    "main.js": "/starships/static/js/main.ce6107e3.chunk.js",
+    "main.js.map": "/starships/static/js/main.ce6107e3.chunk.js.map",
     "runtime-main.js": "/starships/static/js/runtime-main.345c57a2.js",
     "runtime-main.js.map": "/starships/static/js/runtime-main.345c57a2.js.map",
     "static/js/2.c770059a.chunk.js": "/starships/static/js/2.c770059a.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.345c57a2.js",
     "static/js/2.c770059a.chunk.js",
     "static/css/main.17cd282e.chunk.css",
-    "static/js/main.12a3c949.chunk.js"
+    "static/js/main.ce6107e3.chunk.js"
   ]
 }
