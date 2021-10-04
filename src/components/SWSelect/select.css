@@ -9,10 +9,4 @@
   position: absolute;
   right: 0;
   top: 0;
-  transition: 0.25s all ease;
-}
-
-/* transistion */
-.select:hover::after {
-  color: #4a148c;
 }
