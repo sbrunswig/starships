@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/starships/static/css/main.2834bc91.chunk.css",
-    "main.js": "/starships/static/js/main.470f9545.chunk.js",
-    "main.js.map": "/starships/static/js/main.470f9545.chunk.js.map",
+    "main.css": "/starships/static/css/main.cad0c0af.chunk.css",
+    "main.js": "/starships/static/js/main.665b5bbc.chunk.js",
+    "main.js.map": "/starships/static/js/main.665b5bbc.chunk.js.map",
     "runtime-main.js": "/starships/static/js/runtime-main.345c57a2.js",
     "runtime-main.js.map": "/starships/static/js/runtime-main.345c57a2.js.map",
-    "static/js/2.72778a44.chunk.js": "/starships/static/js/2.72778a44.chunk.js",
-    "static/js/2.72778a44.chunk.js.map": "/starships/static/js/2.72778a44.chunk.js.map",
+    "static/js/2.c770059a.chunk.js": "/starships/static/js/2.c770059a.chunk.js",
+    "static/js/2.c770059a.chunk.js.map": "/starships/static/js/2.c770059a.chunk.js.map",
     "index.html": "/starships/index.html",
-    "static/css/main.2834bc91.chunk.css.map": "/starships/static/css/main.2834bc91.chunk.css.map",
-    "static/js/2.72778a44.chunk.js.LICENSE.txt": "/starships/static/js/2.72778a44.chunk.js.LICENSE.txt"
+    "static/css/main.cad0c0af.chunk.css.map": "/starships/static/css/main.cad0c0af.chunk.css.map",
+    "static/js/2.c770059a.chunk.js.LICENSE.txt": "/starships/static/js/2.c770059a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.345c57a2.js",
-    "static/js/2.72778a44.chunk.js",
-    "static/css/main.2834bc91.chunk.css",
-    "static/js/main.470f9545.chunk.js"
+    "static/js/2.c770059a.chunk.js",
+    "static/css/main.cad0c0af.chunk.css",
+    "static/js/main.665b5bbc.chunk.js"
   ]
 }
