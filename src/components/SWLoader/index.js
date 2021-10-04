@@ -1,7 +1,7 @@
 import React from "react";
 
-const SWLoader = () => {
-  return <div class="deathStar fz+">LOADING</div>;
+const SwLoader = (props) => {
+  return <div className="anim-01 p w-1/1" style={props.style}></div>;
 };
 
-export default SWLoader;
+export default SwLoader;

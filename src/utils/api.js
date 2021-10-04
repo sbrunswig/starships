@@ -1,5 +1,6 @@
+/* swapi is a page based api, in order to get all starships have to stich all calls together */
 export const fetchData = () => {
-  function getStarships(url = "https://swapi.dev/api/starships", starships = []) {
+  function fetchStarships(url = "https://swapi.dev/api/starships", starships = []) {
     return new Promise((resolve, reject) =>
       fetch(url)
         .then((response) => {
@@ -10,8 +11,9 @@ export const fetchData = () => {
             .json()
             .then((data) => {
               starships = starships.concat(data.results);
+              /* if there are more pages in api, make recursive call */
               if (data.next) {
-                getStarships(data.next, starships).then(resolve).catch(reject);
+                fetchStarships(data.next, starships).then(resolve).catch(reject);
               } else {
                 resolve(starships);
               }
@@ -21,7 +23,5 @@ export const fetchData = () => {
         .catch(reject)
     );
   }
-
-  const starships = getStarships().then((data) => data);
-  return starships;
+  return fetchStarships().then((data) => data);
 };

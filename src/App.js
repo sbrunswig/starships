@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { fetchData } from "./utils/api";
-import SWLoader from "./components/SWLoader";
-import SWSelect from "./components/SWSelect";
-import SWTable from "./components/SWTable";
+import { getUnique } from "./utils/getUnique";
+import SwLoader from "./components/SwLoader";
+import SwSelect from "./components/SwSelect";
+import SwTable from "./components/SwTable";
 import "./styles/main.scss";
 
 function App() {
+  /* state variables */
   const [starships, setStarships] = useState([]);
   const [filteredStarships, setFilteredStarships] = useState([]);
   const [manufacturers, setManufacturers] = useState([]);
@@ -17,14 +19,12 @@ function App() {
   useEffect(() => {
     fetchData()
       .then((response) => {
+        /* add all starships and filtered starships to state */
         setStarships(response);
         setFilteredStarships(response);
-        const allMan = response
-          .map((starship) => starship.manufacturer)
-          .filter((value, index, self) => self.indexOf(value) === index)
-          .sort();
-        setManufacturers(allMan);
-        console.log(response);
+        /* add manufacturers to state */
+        setManufacturers(getUnique(response, "manufacturer"));
+        /* all data is loaded */
         setIsLoaded(true);
       })
       .catch(() => {
@@ -33,17 +33,20 @@ function App() {
   }, []);
 
   /* user selects a manufacturer from dropdown */
-  let filterStarship = (manufacturer) => {
+  const filterStarship = (manufacturer) => {
+    /* add selected manufacturer to state */
+    setSelectedManufacturer(manufacturer);
+    /* filter down original starship array by passed in manufacturer */
     const findStarships =
       manufacturer === "All"
         ? starships
         : starships.filter((starship) => starship.manufacturer === manufacturer);
+    /* add filtered starships to state */
     setFilteredStarships(findStarships);
-    setSelectedManufacturer(manufacturer);
   };
 
   return (
-    <main class="ai-c d-f fxd-c p+">
+    <main className="ai-c d-f fxd-c p+">
       {isError && (
         <div>
           Don’t be too proud of this technological terror you’ve constructed. The ability to destroy
@@ -51,15 +54,19 @@ function App() {
         </div>
       )}
       {isLoaded ? (
-        <>
-          <div class="mb">
-            <SWSelect manufacturers={manufacturers} filterStarship={filterStarship} />
-          </div>
-          <div class="p- w-1/1 bgc-purple900">{selectedManufacturer}</div>
-          <SWTable starships={filteredStarships} />
-        </>
+        <div className="mb">
+          <SwSelect manufacturers={manufacturers} filterStarship={filterStarship} />
+        </div>
       ) : (
-        <SWLoader />
+        <div className="mb w-1/1">
+          <SwLoader />
+        </div>
+      )}
+      {isLoaded && <div className="p- w-1/1 bgc-purple900">{selectedManufacturer}</div>}
+      {isLoaded ? (
+        <SwTable starships={filteredStarships} />
+      ) : (
+        <SwLoader style={{ height: "500px" }} />
       )}
     </main>
   );

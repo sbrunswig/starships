@@ -5,35 +5,3 @@ body {
   color: white;
   font-family: "Roboto", sans-serif;
 }
-
-/* Arrow */
-.select::after {
-  content: "\25BC";
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: $spacing-unit-small;
-  background-color: $gray800;
-  transition: 0.25s all ease;
-  pointer-events: none;
-}
-/* Transition */
-.select:hover::after {
-  color: $purple900;
-}
-
-.deathStar {
-  animation: color-change 1s infinite;
-}
-
-@keyframes color-change {
-  0% {
-    color: $gray800;
-  }
-  50% {
-    color: $gray900;
-  }
-  100% {
-    color: $gray800;
-  }
-}

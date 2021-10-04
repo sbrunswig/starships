@@ -1,0 +1,18 @@
+/* scoped css to style select */
+
+/* arrow */
+.select::after {
+  background-color: #424242;
+  content: "\25BC";
+  padding: 0.75rem;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.25s all ease;
+}
+
+/* transistion */
+.select:hover::after {
+  color: #4a148c;
+}
