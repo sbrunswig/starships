@@ -47,7 +47,7 @@ function App() {
   };
 
   return (
-    <main className="ai-c d-f fxd-c p+">
+    <main className="ai-c d-f fxd-c p">
       {isError && (
         <div>
           Don’t be too proud of this technological terror you’ve constructed. The ability to destroy
